@@ -4,3 +4,4 @@ mock==1.0.1
 pylint==1.4.0
 numpy==1.9.1
 matplotlib==1.4.2
+sphinx==1.2.3
