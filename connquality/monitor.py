@@ -288,6 +288,7 @@ class Monitor(object):
 
                 line = "\t".join([timestamp, str(latency), result]) + "\n"
                 monitoring_log.write(line)
+                monitoring_log.flush()
 
                 end = get_clock()
                 self._sleep(end - start)
