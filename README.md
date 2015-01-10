@@ -16,8 +16,27 @@ It is rather easy to add more protocols and at least the following are planned:
  * ICMP
  
 
-Requirements and setting up
-===========================
+Windows usage
+=============
+
+The binary .exe files are available at INSERT ADDRESS HERE.
+
+To start collecting data use the monitor.exe tool:
+```
+monitor --help
+```
+
+To then graph the results use the graph.exe tool:
+```
+graph --help
+```
+
+You can also just double-click on graph.exe to run on defaults, assuming you're
+logging to the default file with the monitor as well.
+
+
+Other platforms
+===============
 
 This tool requires you to have Python 2.6, 2.7, 3.2, 3.3 or 3.4 (probably 
 anything newer works too) and pip installed.
@@ -27,13 +46,45 @@ Setting up:
 pip install -r requirements.txt
 ```
 
-
-How to use it?
-==============
-
-To start collecting data, use the bin/monitor.py tool:
+To start collecting data, use the monitor.py tool:
 ```
-python bin/monitor.py --help
+python monitor.py --help
+```
+
+To then graph the results use the graph.py tool:
+```
+python graph.py --help
+```
+
+
+Example usage
+=============
+
+**Monitoring**
+
+The only required parameter is one or more `--tcp=address:port`.
+
+E.g. to monitor that you can access google.com and opendns' guide:
+```
+python monitor.py --tcp=google.com:80 --tcp=guide.opendns.com:80
+```
+
+Or on Windows:
+```
+monitor --tcp=google.com:80 --tcp=guide.opendns.com:80
+```
+
+
+**Graphing**
+
+And to graph with the default settings:
+```
+python graph.py
+```
+
+Or on Windows
+```
+graph
 ```
 
 
@@ -46,6 +97,26 @@ Every update to GitHub is tested automatically with [Travis CI](https://travis-c
 The status should be clearly visible here:
 
 [![Build Status](https://travis-ci.org/lietu/connquality.svg)](https://travis-ci.org/lietu/connquality)
+
+
+Building for Windows
+====================
+
+If you are planning on updating the Windows release, you need to know how to do it.
+This is not required for Windows users using the .exe versions of the tools.
+
+You'll need to download matplotlib and numpy (check requirements.txt for versions) manually.
+
+You also need to install cx_Freeze (`pip install cx_Freeze`) and [pywin32](http://sourceforge.net/projects/pywin32/).
+
+Replace the `C:\python27\` path with whatever your installation directory is.
+
+```
+pip install -r requirements.txt
+python setup.py build
+```
+
+You'll have the windows distribution files available under *build/something*.
 
 
 Licensing?

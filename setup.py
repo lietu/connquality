@@ -1,8 +1,4 @@
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
-
+from cx_Freeze import setup, Executable
 from pip.req import parse_requirements
 
 
@@ -14,7 +10,7 @@ config = {
     'author_email': 'janne.enberg@lietu.net',
     'version': '0.1',
     'install_requires': [
-        str(r.req) for r in parse_requirements("requirements.txt")
+        #str(r.req) for r in parse_requirements("requirements.txt")
     ],
     'packages': [
         'connquality'
@@ -23,4 +19,20 @@ config = {
     'name': 'connquality'
 }
 
-setup(**config)
+packages = [
+    'matplotlib.backends.backend_tkagg',
+]
+
+setup(name=config["description"],
+      version=config["version"],
+      description=config["description"],
+      options={
+          "build_exe": {
+              "packages": packages
+          }
+      },
+      executables=[
+          Executable("monitor.py", base=None),
+          Executable("graph.py", base=None)
+      ]
+)
