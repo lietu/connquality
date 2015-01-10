@@ -1,5 +1,0 @@
-import connquality
-
-
-if __name__ == "__main__":
-    print("foo")
