@@ -53,4 +53,4 @@ Licensing?
 
 Short answer: New BSD or MIT
 
-Long answer: Read LICENSE.txt
+Long answer: Read [LICENSE.txt](https://github.com/lietu/connquality/blob/master/LICENSE.txt)
