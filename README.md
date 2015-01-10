@@ -19,7 +19,7 @@ It is rather easy to add more protocols and at least the following are planned:
 What does the result look like?
 ===============================
 
-![Screenshot](example.jpg?raw=true "Screenshot")
+![Screenshot](example.png?raw=true "Screenshot")
  
 
 Windows usage
