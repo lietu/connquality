@@ -8,6 +8,10 @@ import time
 import datetime
 import socket
 import logging
+import platform
+
+
+IS_WINDOWS = platform.system() == "Windows"
 
 
 def get_clock():
@@ -17,7 +21,10 @@ def get_clock():
     :return: A timestamp (not necessarily a unix timestamp)
     :rtype: float
     """
-    return time.clock()
+    if IS_WINDOWS:
+        return time.clock()
+    else:
+        return time.time()
 
 
 class Check(object):
