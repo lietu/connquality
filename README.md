@@ -15,11 +15,17 @@ It is rather easy to add more protocols and at least the following are planned:
  * DNS
  * ICMP
  
+ 
+What does the result look like?
+===============================
+
+![Screenshot](example.jpg?raw=true "Screenshot")
+ 
 
 Windows usage
 =============
 
-The binary .exe files are available at INSERT ADDRESS HERE.
+The binary .exe files are available at [the project releases page](https://github.com/lietu/connquality/releases/).
 
 To start collecting data use the monitor.exe tool:
 ```
